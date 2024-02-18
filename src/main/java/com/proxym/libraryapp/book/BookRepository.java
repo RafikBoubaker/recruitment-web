@@ -11,15 +11,32 @@ public class BookRepository {
     private Map<ISBN, Book> availableBooks = new HashMap<>();
 
     public void saveAll(List<Book> books){
-        //TODO implement the missing feature
+
+        for (Book book : books) {
+            availableBooks.put(book.isbn, book);
+        }
     }
 
     public void save(Book book){
-        //TODO implement the missing feature
+
+        availableBooks.put(book.isbn, book);
     }
 
     public Book findBook(long isbnCode) {
-        //TODO implement the missing feature
-        return null;
+
+        ISBN isbn = new ISBN(isbnCode);
+        return availableBooks.get(isbn);
     }
+
+    public void removeBook(long isbnCode) {
+        ISBN isbn = new ISBN(isbnCode);
+        availableBooks.remove(isbn);
+    }
+
+    public boolean isBookAvailable(Book book) {
+        return book != null && availableBooks.containsKey(book.getIsbn());
+    }
+
+
+
 }

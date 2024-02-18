@@ -11,6 +11,16 @@ public abstract class Member {
      * An initial sum of money the member has
      */
     private float wallet;
+    private String name;
+
+    public Member(String name) {
+        this.name = name;
+        this.wallet = 0.0f;
+    }
+
+    public String getName() {
+        return name;
+    }
 
     /**
      * The member should pay their books when they are returned to the library

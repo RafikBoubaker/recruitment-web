@@ -37,4 +37,7 @@ public interface Library {
      * @see Member#payBook(int)
      */
     void returnBook(Book book, Member member);
+
+
+    void markBookLate(Member member, Book book1);
 }
